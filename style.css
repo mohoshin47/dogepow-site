@@ -117,6 +117,101 @@ font-size:45px;
 color:#00ff88;
 }
 
+.plans{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+}
+
+.plan-card{
+background:#0c1326;
+padding:35px 25px;
+border-radius:20px;
+text-align:center;
+border:1px solid #1a2744;
+position:relative;
+transition:transform 0.3s,border-color 0.3s;
+}
+
+.plan-card:hover{
+transform:translateY(-8px);
+border-color:#00ff88;
+}
+
+.plan-card.popular{
+border:2px solid #00ff88;
+}
+
+.popular-badge{
+background:#00ff88;
+color:black;
+font-size:13px;
+font-weight:700;
+padding:5px 16px;
+border-radius:20px;
+display:inline-block;
+margin-bottom:12px;
+}
+
+.plan-card h3{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.plan-price{
+font-size:48px;
+font-weight:800;
+color:#00ff88;
+margin-bottom:20px;
+}
+
+.plan-price span{
+font-size:16px;
+font-weight:400;
+color:#ccc;
+}
+
+.plan-card ul{
+list-style:none;
+margin-bottom:25px;
+}
+
+.plan-card ul li{
+padding:8px 0;
+color:#ccc;
+border-bottom:1px solid #1a2744;
+}
+
+.plan-card ul li:last-child{
+border-bottom:none;
+}
+
+.plan-btn{
+display:inline-block;
+padding:12px 30px;
+background:transparent;
+color:#00ff88;
+font-weight:700;
+border:2px solid #00ff88;
+border-radius:10px;
+text-decoration:none;
+transition:background 0.3s,color 0.3s;
+}
+
+.plan-btn:hover{
+background:#00ff88;
+color:black;
+}
+
+.plan-card.popular .plan-btn{
+background:#00ff88;
+color:black;
+}
+
+.plan-card.popular .plan-btn:hover{
+background:#00e07a;
+}
+
 form{
 max-width:600px;
 margin:auto;
