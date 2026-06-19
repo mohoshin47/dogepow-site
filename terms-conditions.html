@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Terms and Conditions for DogePow" />
+  <title>DogePow Terms & Conditions</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #121a2b;
+      --card2: #18233a;
+      --text: #eef4ff;
+      --muted: #a7b4cc;
+      --primary: #8b5cf6;
+      --accent: #f59e0b;
+      --border: rgba(255,255,255,0.08);
+      --radius: 22px;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(139,92,246,0.18), transparent 35%),
+        radial-gradient(circle at top left, rgba(245,158,11,0.12), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      padding: 24px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(139,92,246,0.18), rgba(245,158,11,0.08));
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 36px 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(139,92,246,0.15);
+      border: 1px solid rgba(139,92,246,0.25);
+      color: #d9c9ff;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(26px, 5vw, 46px);
+      line-height: 1.15;
+      margin-bottom: 12px;
+      font-weight: 800;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: clamp(14px, 2.5vw, 16px);
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--card), var(--card2));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      font-size: clamp(18px, 3.5vw, 22px);
+      margin: 28px 0 12px;
+      font-weight: 700;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    h2:first-of-type { margin-top: 0; }
+
+    p, li {
+      color: var(--muted);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    p { margin-bottom: 12px; }
+
+    ul {
+      margin: 10px 0 18px 20px;
+      padding-left: 0;
+    }
+
+    li { margin: 6px 0; }
+
+    .highlight {
+      background: rgba(245,158,11,0.08);
+      border: 1px solid rgba(245,158,11,0.18);
+      border-radius: 16px;
+      padding: 18px;
+      margin: 18px 0;
+    }
+
+    .highlight strong {
+      color: #fff;
+    }
+
+    .contact {
+      background: rgba(139,92,246,0.08);
+      border: 1px solid rgba(139,92,246,0.18);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    a {
+      color: #c4b5fd;
+      text-decoration: none;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    footer {
+      text-align: center;
+      color: #8190aa;
+      font-size: 13px;
+      margin-top: 24px;
+      padding-bottom: 12px;
+    }
+
+    /* Tablet breakpoint */
+    @media (max-width: 768px) {
+      body {
+        padding: 16px;
+      }
+
+      .hero {
+        padding: 28px 22px;
+        border-radius: 24px;
+      }
+
+      .card {
+        padding: 22px 18px;
+        border-radius: 18px;
+      }
+
+      h2 {
+        margin: 22px 0 10px;
+      }
+
+      .highlight,
+      .contact {
+        padding: 14px;
+        border-radius: 12px;
+      }
+    }
+
+    /* Mobile breakpoint */
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+        line-height: 1.65;
+      }
+
+      .container {
+        width: 100%;
+      }
+
+      .hero {
+        padding: 20px 16px;
+        border-radius: 18px;
+        margin-bottom: 16px;
+      }
+
+      .badge {
+        font-size: 10px;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        font-size: 22px;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        font-size: 13px;
+      }
+
+      .card {
+        padding: 16px 14px;
+        border-radius: 14px;
+      }
+
+      h2 {
+        font-size: 17px;
+        margin: 20px 0 8px;
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        margin: 8px 0 14px 16px;
+        font-size: 14px;
+      }
+
+      li {
+        margin: 5px 0;
+      }
+
+      .highlight,
+      .contact {
+        padding: 12px;
+        border-radius: 10px;
+        margin: 14px 0;
+      }
+
+      .highlight strong {
+        font-size: 14px;
+      }
+
+      footer {
+        font-size: 12px;
+        margin-top: 16px;
+      }
+    }
+
+    /* Very small screens */
+    @media (max-width: 360px) {
+      body {
+        padding: 8px;
+      }
+
+      .hero {
+        padding: 16px 12px;
+        border-radius: 14px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .card {
+        padding: 12px 10px;
+        border-radius: 12px;
+      }
+
+      h2 {
+        font-size: 16px;
+      }
+
+      p,
+      ul,
+      li {
+        font-size: 13px;
+      }
+
+      ul {
+        margin-left: 14px;
+      }
+
+      .highlight,
+      .contact {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="badge">DogePow Legal</div>
+      <h1>Terms & Conditions</h1>
+      <p class="subtitle">
+        Last Updated: May 18, 2026<br>
+        These Terms & Conditions govern your use of the DogePow mobile application and related services.
+      </p>
+    </section>
+
+    <main class="card">
+      <h2>1. Acceptance of Terms</h2>
+      <p>
+        By accessing or using DogePow, you agree to be bound by these Terms & Conditions.
+        If you do not agree, please do not use the app.
+      </p>
+
+      <h2>2. Description of Service</h2>
+      <p>
+        DogePow is a virtual rewards platform that allows users to participate in entertainment and promotional activities,
+        including virtual mining, referrals, subscriptions, and reward tracking.
+      </p>
+
+      <div class="highlight">
+        <strong>Important Notice</strong>
+        <ul>
+          <li>No actual cryptocurrency mining occurs.</li>
+          <li>DPOW points are promotional reward points.</li>
+          <li>Rewards are subject to verification.</li>
+          <li>No guarantee is made regarding future token issuance, availability, or value.</li>
+        </ul>
+      </div>
+
+      <h2>3. Eligibility</h2>
+      <p>
+        You must meet the minimum legal age required in your region to use DogePow.
+        You are responsible for complying with all local laws and regulations.
+      </p>
+
+      <h2>4. User Accounts</h2>
+      <ul>
+        <li>You are responsible for maintaining the security of your account.</li>
+        <li>You must provide accurate and complete information.</li>
+        <li>One account per user unless otherwise permitted.</li>
+        <li>We may suspend accounts involved in fraud or abuse.</li>
+      </ul>
+
+      <h2>5. Reward Points</h2>
+      <p>
+        DPOW points are promotional reward points with no guaranteed monetary value.
+        We may adjust, revoke, or expire reward points if suspicious activity is detected.
+      </p>
+
+      <h2>6. Referrals</h2>
+      <ul>
+        <li>Self-referrals are prohibited.</li>
+        <li>Fraudulent referrals may be canceled.</li>
+        <li>Referral rewards may be withheld pending verification.</li>
+      </ul>
+
+      <h2>7. Subscriptions</h2>
+      <ul>
+        <li>Subscriptions renew automatically unless canceled.</li>
+        <li>You can cancel anytime through Google Play.</li>
+        <li>Billing is handled by Google Play.</li>
+        <li>Subscription benefits may change over time.</li>
+      </ul>
+
+      <h2>8. Refunds</h2>
+      <p>
+        Refunds for subscriptions and purchases are governed by Google Play's refund policies and applicable laws.
+        Approved refunds may result in the removal of related benefits.
+      </p>
+
+      <h2>9. Withdrawals</h2>
+      <p>
+        Withdrawal requests are subject to eligibility checks, fraud prevention, and policy compliance.
+        We reserve the right to delay, reject, or cancel any request at our discretion.
+      </p>
+
+      <h2>10. Prohibited Activities</h2>
+      <ul>
+        <li>Using bots, scripts, or automation tools.</li>
+        <li>Creating multiple accounts to abuse rewards.</li>
+        <li>Manipulating ads, referrals, or withdrawals.</li>
+        <li>Any unlawful or fraudulent activity.</li>
+      </ul>
+
+      <h2>11. Account Suspension or Termination</h2>
+      <p>
+        We may suspend or terminate accounts that violate these Terms or engage in suspicious behavior.
+        Reward points and pending withdrawals may be forfeited.
+      </p>
+
+      <h2>12. Intellectual Property</h2>
+      <p>
+        All app content, trademarks, logos, and materials are the property of DogePow or its licensors.
+        Unauthorized use is prohibited.
+      </p>
+
+      <h2>13. Disclaimer of Warranties</h2>
+      <p>
+        DogePow is provided "as is" and "as available" without warranties of any kind.
+        We do not guarantee uninterrupted service or specific outcomes.
+      </p>
+
+      <h2>14. Limitation of Liability</h2>
+      <p>
+        To the maximum extent permitted by law, DogePow shall not be liable for indirect,
+        incidental, or consequential damages arising from your use of the app.
+      </p>
+
+      <h2>15. Changes to the Service</h2>
+      <p>
+        We may modify, suspend, or discontinue any feature, reward, or policy at any time without prior notice.
+      </p>
+
+      <h2>16. Changes to These Terms</h2>
+      <p>
+        We may update these Terms & Conditions from time to time.
+        Continued use of the app after updates constitutes acceptance of the revised terms.
+      </p>
+
+      <h2>17. Governing Law</h2>
+      <p>
+        These Terms are governed by the laws applicable in the jurisdiction where the service operator is established,
+        unless otherwise required by local law.
+      </p>
+
+      <h2>18. Contact Us</h2>
+      <div class="contact">
+        <p><strong>Email:</strong> <a href="mailto:support@dogepow.com">support@dogepow.com</a></p>
+        <p>Please replace this email address with your actual support email.</p>
+      </div>
+    </main>
+
+    <footer>
+      &copy; 2026 DogePow. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
