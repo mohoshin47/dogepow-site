@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self'; form-action https://formsubmit.co; connect-src 'self';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>DogePow - Mine Today, Earn Tomorrow</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" crossorigin="anonymous">
 </head>
 
 <body>
@@ -36,14 +38,14 @@ Join DogePow and earn rewards through mining,
 tasks, referrals and community activities.
 </p>
 
-<a href="https://play.google.com/store/apps/details?id=com.life.dogepow.ai" class="btn">
+<a href="https://play.google.com/store/apps/details?id=com.life.dogepow.ai" class="btn" target="_blank" rel="noopener noreferrer">
 Download App
 </a>
 
 </div>
 
 <div class="hero-right">
-<img src="images/home.png">
+<img src="images/home.png" alt="DogePow app home screen">
 </div>
 
 </section>
@@ -88,10 +90,10 @@ Download App
 
 <div class="gallery">
 
-<img src="images/home.png">
-<img src="images/mining.png">
-<img src="images/tasks.png">
-<img src="images/withdraw.png">
+<img src="images/home.png" alt="DogePow home screen">
+<img src="images/mining.png" alt="DogePow mining screen">
+<img src="images/tasks.png" alt="DogePow tasks screen">
+<img src="images/withdraw.png" alt="DogePow withdraw screen">
 
 </div>
 
@@ -122,11 +124,15 @@ Download App
 
 <form action="https://formsubmit.co/support@dogpow.xyz" method="POST">
 
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+<input type="hidden" name="_captcha" value="true">
+<input type="hidden" name="_template" value="table">
+
 <input type="text" name="name" placeholder="Your Name" required>
 
 <input type="email" name="email" placeholder="Your Email" required>
 
-<textarea name="message" placeholder="Message"></textarea>
+<textarea name="message" placeholder="Message" required></textarea>
 
 <button type="submit">
 Send Message
