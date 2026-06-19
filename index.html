@@ -7,7 +7,7 @@
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" onerror="this.remove()">
 </head>
 
 <body>
@@ -43,7 +43,7 @@ Download App
 </div>
 
 <div class="hero-right">
-<img src="images/home.png">
+<img src="images/home.png" alt="DogePow app home screen" onerror="this.style.display='none'">
 </div>
 
 </section>
@@ -88,10 +88,10 @@ Download App
 
 <div class="gallery">
 
-<img src="images/home.png">
-<img src="images/mining.png">
-<img src="images/tasks.png">
-<img src="images/withdraw.png">
+<img src="images/home.png" alt="DogePow home screen" onerror="this.parentElement.removeChild(this)">
+<img src="images/mining.png" alt="DogePow mining screen" onerror="this.parentElement.removeChild(this)">
+<img src="images/tasks.png" alt="DogePow tasks screen" onerror="this.parentElement.removeChild(this)">
+<img src="images/withdraw.png" alt="DogePow withdraw screen" onerror="this.parentElement.removeChild(this)">
 
 </div>
 
@@ -120,19 +120,109 @@ Download App
 
 <h2>Contact Us</h2>
 
-<form action="https://formsubmit.co/support@dogpow.xyz" method="POST">
+<form id="contact-form" action="https://formsubmit.co/support@dogpow.xyz" method="POST" novalidate>
 
 <input type="text" name="name" placeholder="Your Name" required>
+<span class="error-msg" id="name-error"></span>
 
 <input type="email" name="email" placeholder="Your Email" required>
+<span class="error-msg" id="email-error"></span>
 
-<textarea name="message" placeholder="Message"></textarea>
+<textarea name="message" placeholder="Message" required></textarea>
+<span class="error-msg" id="message-error"></span>
 
-<button type="submit">
+<button type="submit" id="submit-btn">
 Send Message
 </button>
 
+<div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
+
 </form>
+
+<script>
+(function () {
+  var form = document.getElementById('contact-form');
+  var statusEl = document.getElementById('form-status');
+  var submitBtn = document.getElementById('submit-btn');
+
+  function showFieldError(id, msg) {
+    var el = document.getElementById(id);
+    if (el) { el.textContent = msg; el.style.display = msg ? 'block' : 'none'; }
+  }
+
+  function clearErrors() {
+    var msgs = form.querySelectorAll('.error-msg');
+    for (var i = 0; i < msgs.length; i++) {
+      msgs[i].textContent = '';
+      msgs[i].style.display = 'none';
+    }
+    statusEl.textContent = '';
+    statusEl.className = 'form-status';
+  }
+
+  function validateForm() {
+    var valid = true;
+    var name = form.elements['name'].value.trim();
+    var email = form.elements['email'].value.trim();
+    var message = form.elements['message'].value.trim();
+
+    if (!name) {
+      showFieldError('name-error', 'Please enter your name.');
+      valid = false;
+    }
+    if (!email) {
+      showFieldError('email-error', 'Please enter your email.');
+      valid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showFieldError('email-error', 'Please enter a valid email address.');
+      valid = false;
+    }
+    if (!message) {
+      showFieldError('message-error', 'Please enter a message.');
+      valid = false;
+    }
+    return valid;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    clearErrors();
+
+    if (!validateForm()) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    statusEl.textContent = '';
+    statusEl.className = 'form-status';
+
+    var data = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function (res) {
+      if (!res.ok) throw new Error('Server responded with status ' + res.status);
+      return res.json();
+    })
+    .then(function () {
+      statusEl.textContent = 'Message sent successfully!';
+      statusEl.className = 'form-status success';
+      form.reset();
+    })
+    .catch(function (err) {
+      statusEl.textContent = 'Failed to send message. Please try again or email us directly.';
+      statusEl.className = 'form-status error';
+      console.error('Contact form submission error:', err);
+    })
+    .finally(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+    });
+  });
+})();
+</script>
 
 </section>
 
