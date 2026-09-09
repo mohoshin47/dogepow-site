@@ -1,28 +1,43 @@
-# GitHub Pages Deployment Fix Walkthrough
+# "Deploy from Branch" Switch Walkthrough
 
-I have automated the deployment process for your DogPow website. Now, every time you push changes to GitHub, the site will automatically build and update.
+I have removed the GitHub Actions workflow and configured your project to use the traditional "Deploy from branch" method using the `gh-pages` package.
 
 ## ✅ Changes Made
 
-### 1. Vite Configuration
-- Updated `vite.config.ts` to include the `base: '/dogepow-site/'` setting. This ensures that assets like images and CSS load correctly from the GitHub project URL.
+### 1. Workflow Removal
+- Deleted `.github/workflows/deploy.yml`. GitHub will no longer try to build your site using Actions.
 
-### 2. Automated Build & Deploy
-- Created `.github/workflows/deploy.yml`. This is a **GitHub Actions** script that:
-    - Runs whenever you push to `main`.
-    - Installs your project dependencies.
-    - Builds the production version of your site.
-    - Uploads the final files to GitHub Pages.
+### 2. Package Configuration
+- Updated `package.json` to include:
+    - `gh-pages` in `devDependencies`.
+    - `predeploy` script: Automatically builds your site (`npm run build`) before deploying.
+    - `deploy` script: Pushes the contents of your `dist` folder to a new `gh-pages` branch.
 
 ---
 
-## 🚀 Final Step Required (Manual)
+## 🚀 Final Steps (Action Required)
 
-To make the site live, you **MUST** do this once:
+To finish the setup and make your site live, please follow these steps:
 
-1. Open your browser and go to: [https://github.com/mohoshin47/dogepow-site/settings/pages](https://github.com/mohoshin47/dogepow-site/settings/pages)
-2. Under **Build and deployment** > **Source**, click the dropdown and select **"GitHub Actions"**.
+### Step 1: Install & Build
+Run these commands in your terminal:
+```bash
+npm install
+npm run build
+```
 
-![GitHub Pages Settings](https://github.blog/wp-content/uploads/2022/07/github-actions-pages-dropdown.png?w=600)
+### Step 2: Deploy to GitHub
+Run the deploy command:
+```bash
+npm run deploy
+```
+> [!NOTE]
+> This command will create a new branch named `gh-pages` in your repository and upload your built site there.
 
-Once you select "GitHub Actions", your site will start building automatically. You can watch the progress in the **Actions** tab of your repository.
+### Step 3: Update GitHub Settings
+1. Go to your repository settings: [GitHub Pages Settings](https://github.com/mohoshin47/dogepow-site/settings/pages)
+2. Under **Build and deployment** > **Source**, select **"Deploy from a branch"**.
+3. Under **Branch**, click the dropdown and select **`gh-pages`**.
+4. Click **Save**.
+
+Your site should be live at: `https://mohoshin47.github.io/dogepow-site/` within a few minutes.

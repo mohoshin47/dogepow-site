@@ -1,13 +1,8 @@
-# Task List - Switch to "Deploy from Branch"
+# Task List - Fix Custom Domain Loading
 
-- [x] Remove GitHub Actions Workflow
-    - [x] Delete `.github/workflows/deploy.yml`
-- [x] Configure `package.json`
-    - [x] [MODIFY] Add `gh-pages` dependency
-    - [x] [MODIFY] Add `predeploy` & `deploy` scripts
-- [/] Finalize & Push
-    - [ ] Push changes to GitHub
-- [ ] Manual Steps
-    - [ ] User runs `npm install`
-    - [ ] User runs `npm run deploy`
-    - [ ] User updates GitHub Pages settings
+- [x] Update Vite Config
+    - [x] [MODIFY] `vite.config.ts` (Set base to '/')
+- [x] Add CNAME persistence
+    - [x] [NEW] `public/CNAME` (Add 'dogpow.xyz')
+- [/] Push Changes
+    - [ ] Commit and push to GitHub

@@ -1,30 +1,23 @@
-# Implementation Plan - Switch to "Deploy from Branch"
+# Implementation Plan - Fix Custom Domain Loading Issue
 
-Switch the deployment method from GitHub Actions to the traditional "Deploy from branch" method using the `gh-pages` package.
+Your site is showing a blank page because it is still trying to load files from the `/dogepow-site/` folder, but your custom domain `dogpow.xyz` serves everything from the root `/`.
 
 ## Proposed Changes
 
-### 1. Remove GitHub Actions Workflow
-- Delete `.github/workflows/deploy.yml` as it's no longer needed for this method.
+### 1. Update Vite Configuration
+#### [MODIFY] [vite.config.ts](file:///I:/AndroidStudioProjects2/DogePow/web/vite.config.ts)
+- Change `base` from `'/dogepow-site/'` to `'/'`. This ensures assets are loaded from the correct path on your custom domain.
 
-### 2. Configure `gh-pages` for Deployment
-#### [MODIFY] [package.json](file:///I:/AndroidStudioProjects2/DogePow/web/package.json)
-- Add `gh-pages` to `devDependencies`.
-- Add `predeploy` and `deploy` scripts.
-  - `predeploy`: `npm run build`
-  - `deploy`: `gh-pages -d dist`
+### 2. Add CNAME for Persistence
+#### [NEW] [CNAME](file:///I:/AndroidStudioProjects2/DogePow/web/public/CNAME)
+- Create a `CNAME` file in the `public` folder with the value `dogpow.xyz`. This prevents GitHub from "forgetting" your custom domain settings every time you deploy.
 
-## Manual Steps Required
+## Next Steps for You
 
-1. **Install the new dependency**:
-   Run `npm install` in your terminal.
-2. **Deploy for the first time**:
-   Run `npm run deploy`. This will create a new `gh-pages` branch on your GitHub repository.
-3. **Change GitHub Settings**:
-   - Go to **Settings** -> **Pages**.
-   - Under **Build and deployment** -> **Source**, select **"Deploy from a branch"**.
-   - Under **Branch**, select **"gh-pages"** and the **"/(root)"** folder.
+After I apply these changes:
+1. Run `npm run deploy` in your terminal.
+2. Wait 1-2 minutes and refresh `dogpow.xyz`.
 
 ## Verification Plan
-- Verify `package.json` has the correct scripts.
-- Ensure the workflow file is removed.
+- Check that `vite.config.ts` reflects the root path.
+- Verify `public/CNAME` exists.
