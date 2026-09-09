@@ -1,0 +1,134 @@
+## Feature & Future Development Rules
+
+- Any future feature, section, page, functionality, or requirement provided by the project owner MUST be included.
+- Never remove, replace, or modify an owner-requested feature unless explicitly instructed.
+- Preserve all existing functionality when adding new features.
+- In addition to the requested features, proactively identify and suggest useful features that can improve the DogPow website.
+- The assistant may add additional sections, UX improvements, animations, interactions, and functionality when they are genuinely useful for a modern crypto meme-token website.
+- Follow current modern crypto and meme-token website design trends while keeping the website clean, fast, professional, and easy to use.
+- All new features must match the existing DogPow branding, visual language, and design system.
+- Do not add unnecessary features simply to make the website larger or more complicated.
+- Before adding major functionality, consider usability, performance, responsiveness, accessibility, maintainability, and security.
+
+## Partners / Ecosystem
+
+Add a dedicated "Built On & Tracked With" / "Partners" section.
+
+Initial partners/platforms:
+
+- Solana
+- Raydium
+- Phantom
+- GeckoTerminal
+- DEXTools
+
+The section should use:
+
+- Modern partner cards
+- Official-looking logos/icons where appropriate
+- Responsive layouts
+- Subtle animations
+- Hover interactions
+- Consistent DogPow branding
+
+The structure must allow additional partners to be added easily in the future without requiring major changes to the existing code.
+
+## Modern Meme Token Website Features
+
+The website may include relevant modern features such as:
+
+- Premium Hero section
+- Token price and market information
+- Contract address with copy functionality
+- Tokenomics visualization
+- Roadmap
+- Why DogPow section
+- Project comparison
+- Community section
+- Exchange / DEX information
+- Buy DPOW CTA
+- Social media links
+- Partners / Ecosystem section
+- Live blockchain and market data when reliable API integration is available
+- Animated statistics
+- Scroll-based animations
+- Interactive cards
+- Mobile navigation
+- FAQ section
+- Community and social proof
+- SEO optimization
+- Fast loading and performance optimization
+- Dark crypto-themed visual design
+- Modern micro-interactions
+- Loading and empty states
+- Error handling where needed
+- Responsive mobile experience
+- Clear calls-to-action
+- Professional footer and navigation
+- Proper metadata and social sharing support
+
+Only add features that are relevant to DogPow and provide a meaningful improvement to the user experience.
+
+## Design Principle
+
+The final website should feel like a modern, premium, high-quality crypto meme-token website rather than a generic template.
+
+- Keep the UI visually impressive but clean.
+- Maintain strong visual hierarchy.
+- Prioritize mobile usability.
+- Use animations purposefully rather than excessively.
+- Maintain consistency across every section.
+- New features should feel like they were designed as part of the original product.
+
+The owner-provided requirements always have the highest priority.
+
+The assistant may proactively add suitable modern features, UI improvements, animations, sections, interactions, and UX enhancements when they improve the overall product.
+
+## Why DogPow? Section
+
+Add a dedicated "Why DogPow?" section.
+
+The section should clearly communicate what makes DogPow different and why users may find the project interesting.
+
+It MUST include a modern comparison feature that compares DogPow with other relevant meme-token projects.
+
+### Comparison Features
+
+- Compare DogPow with selected or relevant meme-token projects.
+- Present the comparison using a modern table, cards, or another easy-to-understand UI.
+- DogPow must be visually highlighted.
+- Comparison criteria may include:
+  - Blockchain
+  - Total Supply
+  - Community Allocation
+  - Liquidity Allocation
+  - Utility
+  - Community Focus
+  - Ecosystem
+  - Roadmap
+  - Transparency
+  - Exchange Listing Plans
+- Use appropriate checkmarks, statistics, badges, indicators, or visual elements.
+- Make the comparison fully responsive and easy to understand on mobile.
+- Use horizontal scrolling or responsive comparison cards when necessary.
+- Add subtle animations and modern micro-interactions.
+- Never make false, misleading, or unverifiable claims about competing projects.
+- If reliable live/current data is unavailable, clearly label static or demo information.
+- Keep comparisons informative and professional rather than attacking or negatively targeting competitors.
+
+## Code Quality & Implementation Style
+
+- Write clean, professional, production-quality code.
+- Code should read naturally and follow normal developer conventions.
+- Use meaningful variable, function, component, and file names.
+- Avoid unnecessary comments, artificial explanations, or repetitive code.
+- Do not over-engineer simple features.
+- Keep components modular and reusable.
+- Keep data, UI, logic, and utilities properly separated.
+- Avoid duplicated code and unnecessary abstractions.
+- Follow consistent formatting and TypeScript conventions.
+- Use realistic implementation patterns suitable for a real production project.
+- Do not generate placeholder logic where a proper implementation is reasonably possible.
+- Use clear error handling and sensible loading states.
+- Keep the implementation maintainable so another developer can understand and continue the project easily.
+- When providing code, provide complete, directly usable files that can be pasted into VS Code.

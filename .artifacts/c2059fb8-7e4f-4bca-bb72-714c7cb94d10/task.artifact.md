@@ -1,0 +1,24 @@
+# Task List - Full UI Redesign & Responsive Scaling
+
+- [x] **Fluid Foundation**
+    - [x] [MODIFY] `src/index.css` (Fluid typography and spacing variables)
+- [/] **Component Level Scaling**
+    - [x] [MODIFY] `src/components/Navbar.tsx`
+    - [x] [MODIFY] `src/components/Button.tsx`
+    - [x] [MODIFY] `src/components/Card.tsx`
+- [ ] **Hero Section Redesign**
+    - [ ] [MODIFY] `src/sections/Hero.tsx` (Mascot visual + Fluid layout)
+- [ ] **Section Rhythm & Spacing**
+    - [ ] [MODIFY] `src/sections/Security.tsx`
+    - [ ] [MODIFY] `src/sections/Partners.tsx`
+    - [ ] [MODIFY] `src/sections/WhyDogPow.tsx`
+    - [ ] [MODIFY] `src/sections/Tokenomics.tsx`
+    - [ ] [MODIFY] `src/sections/Roadmap.tsx`
+    - [ ] [MODIFY] `src/sections/FAQ.tsx`
+    - [ ] [MODIFY] `src/sections/Contact.tsx`
+    - [ ] [MODIFY] `src/sections/Footer.tsx`
+- [ ] **Final Assembly & Assembly**
+    - [ ] [MODIFY] `src/App.tsx`
+- [ ] **Verification**
+    - [ ] Build Check
+    - [ ] Responsive Layout Verification

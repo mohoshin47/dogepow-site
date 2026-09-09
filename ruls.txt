@@ -1,0 +1,101 @@
+# DogPow Website — Project Rules
+
+Build the **DogPow (DPOW)** crypto meme token website using:
+
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+
+## Token Information
+
+* Token Name: **DogPow**
+* Symbol: **DPOW**
+* Total Supply: **10B**
+* Blockchain: **Solana**
+* Fundraising Target: **$5M**
+* Target Exchange Listing: **Q3 2027**
+* Website: **dogpow.xyz**
+
+## Token Allocation
+
+* **60%** — Mining & Community
+* **30%** — Liquidity & Market Ops
+* **10%** — Team & Development
+
+## UI Rules
+
+* Mobile-first & fully responsive
+* Optimize for **360dp × 720dp**
+* Modern, premium meme-coin design
+* Smooth animations and interactions
+* Tailwind CSS for all styling
+* Reusable React components
+* Clean and maintainable TypeScript code
+* Do not expose private keys, API secrets, or sensitive credentials
+* Keep the design consistent across all sections
+
+## Project Structure Rules
+
+Always follow this project structure:
+
+```text
+dogpow/
+├── public/
+│   ├── images/
+│   ├── icons/
+│   └── favicon.svg
+│
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── sections/
+│   ├── layouts/
+│   ├── data/
+│   ├── hooks/
+│   ├── lib/
+│   ├── types/
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+│
+├── .env
+├── .gitignore
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+```
+
+### Structure Guidelines
+
+* `components/` → Reusable UI components
+* `sections/` → Main website sections
+* `layouts/` → Page layouts
+* `data/` → Static token/roadmap data
+* `hooks/` → Custom React hooks
+* `lib/` → Utility functions and integrations
+* `types/` → TypeScript types/interfaces
+* `assets/` → Imported local assets
+* `public/` → Public images, icons and static files
+
+**Always follow this structure when creating or modifying code.**
+
+Do not put everything inside `App.tsx`.
+
+Keep each component and section in its own file when appropriate.
+
+## Coding Rules
+
+* Use TypeScript strictly.
+* Use functional React components.
+* Use reusable components instead of duplicate code.
+* Keep files organized according to the structure above.
+* Use Tailwind CSS instead of unnecessary CSS files.
+* Avoid unnecessary dependencies.
+* Write complete, working code.
+* All code must be directly pasteable into VS Code.
+* When modifying a file, provide the complete updated file.
+* Do not change unrelated files or features.
+* Do not remove existing functionality unless explicitly requested.
