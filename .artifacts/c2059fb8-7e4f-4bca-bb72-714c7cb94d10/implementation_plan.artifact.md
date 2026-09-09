@@ -1,53 +1,25 @@
-# Implementation Plan - Full UI Redesign (Responsive Typography & Layout)
+# Implementation Plan - Fix GitHub Pages Deployment
 
-Redesign the DogPow (DPOW) website's typography and layout system to be fully fluid and responsive using modern CSS techniques (`clamp()`, CSS Grid). This ensures a "premium" feel on everything from small mobile devices (360dp) to large desktop monitors.
-
-## User Review Required
-
-> [!IMPORTANT]
-> **Fluid Typography**: I am moving away from static Tailwind classes (like `text-8xl`) to a fluid system. Headings will automatically scale perfectly based on the viewport width without "jumping" at breakpoints.
-> **Layout Rhythm**: I will implement a global spacing system to ensure consistent "breathing room" across all sections.
+Your site is showing a 404 error because you have uploaded the **source code** (the instructions), but GitHub Pages needs the **built website** (the final product) to run.
 
 ## Proposed Changes
 
-### 1. Foundation: Fluid Design System
-#### [MODIFY] [index.css](file:///I:/AndroidStudioProjects2/DogePow/web/src/index.css)
-- Define fluid variables for typography:
-  - `--text-display`: Hero headings (scales from ~40px to ~120px).
-  - `--text-h2`: Section headings.
-  - `--text-h3`: Card/Sub-headings.
-  - `--text-body`: Standard text.
-- Define fluid spacing:
-  - `--section-gap`: Vertical padding between sections.
-  - `--container-px`: Horizontal padding for the container.
+### 1. Configure Vite for GitHub Pages
+#### [MODIFY] [vite.config.ts](file:///I:/AndroidStudioProjects2/DogePow/web/vite.config.ts)
+- Add `base: '/dogepow-site/'` so the website knows its location on GitHub.
 
-### 2. Hero Section: Premium Layout & Visuals
-#### [MODIFY] [Hero.tsx](file:///I:/AndroidStudioProjects2/DogePow/web/src/sections/Hero.tsx)
-- Apply the new fluid headings.
-- **Mascot Integration**: Add a stylized, animated "DogPow Core" visual (glassmorphism sphere with amber glow) to act as a placeholder for the mascot.
-- Compact the layout further for mobile while maintaining desktop elegance.
+### 2. Automate Deployment with GitHub Actions
+#### [NEW] [.github/workflows/deploy.yml](file:///I:/AndroidStudioProjects2/DogePow/web/.github/workflows/deploy.yml)
+- Create a workflow that automatically builds your project and deploys it to GitHub Pages every time you push to the `main` branch.
 
-### 3. Navigation: Balanced Scaling
-#### [MODIFY] [Navbar.tsx](file:///I:/AndroidStudioProjects2/DogePow/web/src/components/Navbar.tsx)
-- Use the fluid typography for the logo and links.
-- Refine the mobile menu transition to be faster and "lighter".
+## Manual Steps Required (Important!)
 
-### 4. Global Content Refinement
-#### [MODIFY] all sections ([Partners.tsx](file:///I:/AndroidStudioProjects2/DogePow/web/src/sections/Partners.tsx), [Roadmap.tsx](file:///I:/AndroidStudioProjects2/DogePow/web/src/sections/Roadmap.tsx), [Tokenomics.tsx](file:///I:/AndroidStudioProjects2/DogePow/web/src/sections/Tokenomics.tsx), etc.)
-- Replace manual spacing with the new `.section-padding` and `.container-wide` utilities.
-- Ensure all cards use consistent fluid sizes.
-
----
+After I apply these changes and you push them to GitHub:
+1. Go to your GitHub repository: `https://github.com/mohoshin47/dogepow-site`
+2. Click on **Settings** -> **Pages**.
+3. Under **Build and deployment** -> **Source**, change "Deploy from a branch" to **"GitHub Actions"**.
 
 ## Verification Plan
-
-### Automated Tests
-- Run `npm run build` to ensure no regression.
-
-### Manual Verification
-- **Visual Regression**: Test the website at:
-  - 360px (Small Mobile)
-  - 768px (Tablet)
-  - 1440px (Desktop)
-  - 2560px (4K)
-- **Check Spacing**: Ensure vertical rhythm is consistent and not "crowded".
+- I will verify that `vite.config.ts` is updated correctly.
+- I will verify the workflow file structure.
+- Once you push the changes, you can monitor the progress in the **Actions** tab of your GitHub repository.
