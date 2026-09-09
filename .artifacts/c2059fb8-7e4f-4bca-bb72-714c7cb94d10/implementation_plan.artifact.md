@@ -1,25 +1,30 @@
-# Implementation Plan - Fix GitHub Pages Deployment
+# Implementation Plan - Switch to "Deploy from Branch"
 
-Your site is showing a 404 error because you have uploaded the **source code** (the instructions), but GitHub Pages needs the **built website** (the final product) to run.
+Switch the deployment method from GitHub Actions to the traditional "Deploy from branch" method using the `gh-pages` package.
 
 ## Proposed Changes
 
-### 1. Configure Vite for GitHub Pages
-#### [MODIFY] [vite.config.ts](file:///I:/AndroidStudioProjects2/DogePow/web/vite.config.ts)
-- Add `base: '/dogepow-site/'` so the website knows its location on GitHub.
+### 1. Remove GitHub Actions Workflow
+- Delete `.github/workflows/deploy.yml` as it's no longer needed for this method.
 
-### 2. Automate Deployment with GitHub Actions
-#### [NEW] [.github/workflows/deploy.yml](file:///I:/AndroidStudioProjects2/DogePow/web/.github/workflows/deploy.yml)
-- Create a workflow that automatically builds your project and deploys it to GitHub Pages every time you push to the `main` branch.
+### 2. Configure `gh-pages` for Deployment
+#### [MODIFY] [package.json](file:///I:/AndroidStudioProjects2/DogePow/web/package.json)
+- Add `gh-pages` to `devDependencies`.
+- Add `predeploy` and `deploy` scripts.
+  - `predeploy`: `npm run build`
+  - `deploy`: `gh-pages -d dist`
 
-## Manual Steps Required (Important!)
+## Manual Steps Required
 
-After I apply these changes and you push them to GitHub:
-1. Go to your GitHub repository: `https://github.com/mohoshin47/dogepow-site`
-2. Click on **Settings** -> **Pages**.
-3. Under **Build and deployment** -> **Source**, change "Deploy from a branch" to **"GitHub Actions"**.
+1. **Install the new dependency**:
+   Run `npm install` in your terminal.
+2. **Deploy for the first time**:
+   Run `npm run deploy`. This will create a new `gh-pages` branch on your GitHub repository.
+3. **Change GitHub Settings**:
+   - Go to **Settings** -> **Pages**.
+   - Under **Build and deployment** -> **Source**, select **"Deploy from a branch"**.
+   - Under **Branch**, select **"gh-pages"** and the **"/(root)"** folder.
 
 ## Verification Plan
-- I will verify that `vite.config.ts` is updated correctly.
-- I will verify the workflow file structure.
-- Once you push the changes, you can monitor the progress in the **Actions** tab of your GitHub repository.
+- Verify `package.json` has the correct scripts.
+- Ensure the workflow file is removed.

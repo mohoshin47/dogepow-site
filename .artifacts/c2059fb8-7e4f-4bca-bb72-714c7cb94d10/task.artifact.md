@@ -1,8 +1,13 @@
-# Task List - Fix GitHub Pages Deployment
+# Task List - Switch to "Deploy from Branch"
 
-- [x] Configure Vite
-    - [x] [MODIFY] `vite.config.ts` (Add base path)
-- [x] Automate Deployment
-    - [x] [NEW] `.github/workflows/deploy.yml`
+- [x] Remove GitHub Actions Workflow
+    - [x] Delete `.github/workflows/deploy.yml`
+- [x] Configure `package.json`
+    - [x] [MODIFY] Add `gh-pages` dependency
+    - [x] [MODIFY] Add `predeploy` & `deploy` scripts
 - [/] Finalize & Push
-    - [ ] Commit and push changes to GitHub
+    - [ ] Push changes to GitHub
+- [ ] Manual Steps
+    - [ ] User runs `npm install`
+    - [ ] User runs `npm run deploy`
+    - [ ] User updates GitHub Pages settings
